@@ -1,0 +1,79 @@
+body {
+    background: url("/images/galaxy-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* signup.css */
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: #f3f4f6; */
+    
+}
+
+.signup-box {
+    background:  rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.signup-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-left: 2.5rem; /* เพิ่มพื้นที่ด้านซ้ายเพื่อให้ไอคอนไม่ชนกับข้อความ */
+    border: 1px solid #f6f6f6;
+    border-radius: 50px;
+    font-size: 1rem;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px; /* กำหนดตำแหน่งไอคอนจากซ้าย */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #8d4ddc;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
