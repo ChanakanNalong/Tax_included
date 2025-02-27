@@ -11,9 +11,9 @@ export default function Income() {
         royalty: 0, // ✅ เปลี่ยนจาก copyright เป็น royalty
         dividend: 0, // ✅ เปลี่ยนจาก interest_dividend เป็น dividend
         rental: 0, // ✅ เปลี่ยนจาก rent เป็น rental
-        profession: 0,
+        independent_profession: 0,
         contractor: 0,
-        sell_products: 0, // ⚠️ เช็คว่าต้องใช้จริงไหม?
+        other_income: 0, // ⚠️ เช็คว่าต้องใช้จริงไหม?
     });
 
     useEffect(() => {
@@ -55,9 +55,9 @@ export default function Income() {
                     <input type="number" name="royalty" placeholder="Royalty" onChange={handleChange} className="input" />
                     <input type="number" name="dividend" placeholder="Dividend" onChange={handleChange} className="input" />
                     <input type="number" name="rental" placeholder="Rental" onChange={handleChange} className="input" />
-                    <input type="number" name="profession" placeholder="Profession" onChange={handleChange} className="input" />
+                    <input type="number" name="independent_profession" placeholder="Profession" onChange={handleChange} className="input" />
                     <input type="number" name="contractor" placeholder="Contractor" onChange={handleChange} className="input" />
-                    <input type="number" name="sell_products" placeholder="Sell Products" onChange={handleChange} className="input" />
+                    <input type="number" name="other_income" placeholder="Sell Products" onChange={handleChange} className="input" />
                     <button type="submit" className="button">Save Income</button>
                 </form>
             </div>
