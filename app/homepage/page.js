@@ -30,7 +30,7 @@ const expenseData = [
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 export default function Dashboard() {
-    const username = "John Doe"; // ตัวอย่างชื่อผู้ใช้ (สามารถดึงมาจาก state หรือ context)
+    const username = "John Doe";
     const router = useRouter();
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function Dashboard() {
 
     return (
         <div className="layout">
-            {/* Sidebar */}
+            {/* Sidebar ซ้าย */}
             <aside className="sidebar">
                 <h2>Tax Dashboard</h2>
                 <ul>
@@ -53,75 +53,32 @@ export default function Dashboard() {
 
             {/* Main Content */}
             <main className="main-content">
-                {/* Header */}
                 <header className="header">
                     <h1>Tax Overview</h1>
-
                     <div className="header-actions">
-                        {/* ส่วนของโปรไฟล์และชื่อผู้ใช้ */}
                         <div className="profile" onClick={() => router.push("/profile")}>
                             <FaUserCircle className="icon" />
                             <span className="username">{username}</span>
                         </div>
-
-                        {/* ปุ่มแจ้งเตือน */}
-                        <button className="notification-btn">
-                            <FaBell className="icon" />
-                        </button>
-
-                        {/* ปุ่มช่วยเหลือ */}
-                        <button className="help-btn">
-                            <FaInfoCircle className="icon" />
-                        </button>
-
-                        {/* ปุ่มออกจากระบบ */}
+                        <button className="notification-btn"><FaBell className="icon" /></button>
+                        <button className="help-btn"><FaInfoCircle className="icon" /></button>
                         <button className="logout-btn" onClick={() => {
                             localStorage.removeItem("token");
                             router.push("/login");
-                        }}>
-                            Logout
-                        </button>
+                        }}>Logout</button>
                     </div>
                 </header>
 
                 {/* Summary Cards */}
                 <section className="summary-container">
-                    <div className="summary-card">
-                        <div className="icon"><GiReceiveMoney /></div>
-                        <div>
-                            <p className="amount">$500,000</p>
-                            <p className="label">รายได้รวม</p>
-                        </div>
-                    </div>
-
-                    <div className="summary-card">
-                        <div className="icon"><FaCreditCard /></div>
-                        <div>
-                            <p className="amount">$200,000</p>
-                            <p className="label">รายจ่ายรวม</p>
-                        </div>
-                    </div>
-
-                    <div className="summary-card">
-                        <div className="icon"><FaFileInvoiceDollar /></div>
-                        <div>
-                            <p className="amount">$50,000</p>
-                            <p className="label">ค่าลดหย่อน</p>
-                        </div>
-                    </div>
-
-                    <div className="summary-card">
-                        <div className="icon"><FaFileInvoiceDollar /></div>
-                        <div>
-                            <p className="amount">$50,000</p>
-                            <p className="label">ค่าภาษีที่ต้องจ่าย</p>
-                        </div>
-                    </div>
+                    <div className="summary-card"><GiReceiveMoney /><p>$500,000</p><p>รายได้รวม</p></div>
+                    <div className="summary-card"><FaCreditCard /><p>$200,000</p><p>รายจ่ายรวม</p></div>
+                    <div className="summary-card"><FaFileInvoiceDollar /><p>$50,000</p><p>ค่าลดหย่อน</p></div>
+                    <div className="summary-card"><FaFileInvoiceDollar /><p>$50,000</p><p>ค่าภาษีที่ต้องจ่าย</p></div>
                 </section>
 
                 {/* Charts */}
                 <section className="chart-container">
-                    {/* กราฟแท่ง */}
                     <div className="chart">
                         <h2>Revenue-Expenses Trend</h2>
                         <ResponsiveContainer width="100%" height={300}>
@@ -133,8 +90,6 @@ export default function Dashboard() {
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
-
-                    {/* กราฟวงกลม */}
                     <div className="chart">
                         <h2>Display Revenue-Expense Proportion</h2>
                         <ResponsiveContainer width="100%" height={300}>
@@ -149,6 +104,20 @@ export default function Dashboard() {
                     </div>
                 </section>
             </main>
-        </div >
+
+            {/* Sidebar ขวา */}
+            <aside className="right-sidebar">
+                <h2>Notifications</h2>
+                <ul>
+                    <li>📢 อัปเดตภาษีล่าสุด</li>
+                    <li>🔔 แจ้งเตือนการจ่ายภาษี</li>
+                    <li>📑 เอกสารที่ต้องยื่น</li>
+                </ul>
+
+                <h2>Quick Actions</h2>
+                <button>📤 ส่งเอกสาร</button>
+                <button>📊 ดูรายงาน</button>
+            </aside>
+        </div>
     );
 }

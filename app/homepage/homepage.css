@@ -303,3 +303,55 @@ p {
 .logout-btn:hover {
     color: #007BFF;
 }
+
+/*sidebar ด้านขวามือ */
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px; /* เพิ่มคอลัมน์สำหรับ sidebar ด้านขวา */
+    height: 100vh;
+}
+
+.sidebar {
+    background: #2C3E50;
+    color: white;
+    padding: 20px;
+}
+
+.right-sidebar {
+    background: #ECF0F1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.right-sidebar h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.right-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.right-sidebar ul li {
+    background: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.right-sidebar button {
+    background: #3498DB;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-sidebar button:hover {
+    background: #2980B9;
+}
